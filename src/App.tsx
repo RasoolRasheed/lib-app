@@ -1,14 +1,14 @@
 import React from 'react';
-import './App.css';
 import './App.scss';
-import Author from "./Components/views/Author/Author";
-import Welcome from "./Components/views/welcome/Welcome";
+import {Container} from "react-bootstrap";
+import Library from "./views/Library";
 
 const App:React.FC= () => {
-  return <div>
-    <Welcome></Welcome>
-    <Author name={"Razool"}></Author>
-  </div>;
+  return(
+      <Container className="px-0" fluid>
+        <Library></Library>
+      </Container>
+  );
 }
 
 export default App;

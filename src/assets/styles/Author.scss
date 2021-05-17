@@ -1,7 +1,10 @@
-.back{
-  //background-color: green;
-}
 
+.add-author-title{
+  padding: 25px;
+}
+.add-author-plus{
+  cursor: pointer;
+}
 .author-title{
   *:hover {
     //color: black;
@@ -9,7 +12,7 @@
   }
 }
 body{
-  align-content: end;
+  //align-content: end;
 }
 .create-author-title{
   color:darkgreen;
