@@ -1,22 +1,27 @@
+$title_font_color: #2c302f;
 
 .add-author-title{
   padding: 25px;
 }
 .add-author-plus{
   cursor: pointer;
+  color: cornflowerblue;
 }
-.author-title{
-  *:hover {
-    //color: black;
-    text-decoration: none !important;
+.author-container .author-title {
+    color: $title_font_color;
+    font-weight: 500;
+    font-size: 2em;
+    border-bottom: 2px solid $title_font_color;
+    padding-left: 0;
+    margin-bottom: 0.7em;
   }
-}
-body{
-  //align-content: end;
-}
-.create-author-title{
-  color:darkgreen;
-  text-decoration: underline;
-  font-size: large;
-}
+
+  body{
+  }
+  .create-author-title{
+    color:darkgreen;
+    text-decoration: underline;
+    font-size: large;
+  }
+
 
