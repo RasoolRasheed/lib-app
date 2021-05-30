@@ -27,18 +27,18 @@ const UpdateAuthorForm:React.FC<UpdateAuthorForm> = (props) => {
     }
 
     return(
-        <Container>
+        <Container fluid={true}>
             <Row>
-                <Col>
-                    <p>Update Author</p>
+                <Col xs={10} md={4} className={"update-author-title px-0"}>
+                    <p><u>Update Author</u></p>
                 </Col>
-                <Col>
-                    <XCircle className={"edit-close-btn"} onClick={()=> props.closeForm()}/>
+                <Col xs={2} md={3} className={"px-3"}>
+                    <XCircle className={"update-author-title-xcircle"} onClick={()=> props.closeForm()}/>
                 </Col>
             </Row>
             <Row>
-                <Col>
-                    <Form onSubmit={(event:React.FormEvent) => submitUpdateAuthorForm(event)}>
+                <Col className={"update-form px-3"} md={7}>
+                    <Form className={"px-0 mx-0"} onSubmit={(event:React.FormEvent) => submitUpdateAuthorForm(event)}>
                         <FormGroup>
                             <Form.Label className="author-name-label">Name of Author</Form.Label>
                             <FormControl type="text" value={updateAuthor} onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleAuthorChange(event)}></FormControl>

@@ -33,6 +33,8 @@ const AuthorListLine : React.FC<authorsListLineProps> = (props) => {
                 <Col xs={10}>{props.id}. {props.name}</Col>
                 <Col className={"author-btn-container"}>
                     <Edit className="edit-btn" onClick={() => props.updateRequest(props.id)}/>
+                </Col>
+                <Col>
                     <Trash2 className="trash-btn" onClick={() => props.delete(props.id)}></Trash2>
                 </Col>
             </Row>

@@ -1,3 +1,20 @@
 .edit-close-btn{
   cursor: pointer;
 }
+.update-btn-container {
+  float: right;
+
+  .update-btn{
+    margin-top: 1em;
+  }
+}
+.update-author-title{
+  font-size: 20px;
+  color: forestgreen;
+}
+
+.update-author-title-xcircle{
+  cursor: pointer;
+  float:right;
+  color: black;
+}
