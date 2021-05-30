@@ -10,7 +10,7 @@ type AddAuthorModelProps = {
 
 const AddAuthorModel : React.FC<AddAuthorModelProps> = (props) => {
     const[enteredAuthor,setEnteredAuthor] = useState<string>("");
-
+    const [validated, setValidated] = useState(false);
     const inVisibleAddAuthorForm = () =>
     {
 
@@ -20,9 +20,9 @@ const AddAuthorModel : React.FC<AddAuthorModelProps> = (props) => {
         setEnteredAuthor(authorName);
     }
     const submitAuthorForm = (event:React.FormEvent) => {
-        console.log("subm");
         event.preventDefault();
         event.stopPropagation();
+        setValidated(true);
         if(enteredAuthor === ""){
             return;
         }
@@ -33,25 +33,28 @@ const AddAuthorModel : React.FC<AddAuthorModelProps> = (props) => {
     return(
         <Container fluid={true}>
             <Row>
-                <Col xs={5} md={5} className={"create-author-title px-0"}>Create Author</Col>
-                <Col xs={5} md={1} className={"px-0 border border-danger"}> <XCircle className={"create-author-title-xcircle"}
+                <Col xs={10} md={4} className={"create-author-title px-0"}>Create Author</Col>
+                <Col xs={2} md={3} className={"px-3"}>
+                    <XCircle className={"create-author-title-xcircle"}
                                onClick={() => props.closeForm()}>
                 </XCircle>
                 </Col>
-
             </Row>
             <Row>
-                <Col className={"create-form px-0"} md={6}>
-                    <Form className={"px-4"} onSubmit={(event:React.FormEvent) => submitAuthorForm(event)}>
+                <Col className={"create-form px-3"} md={7}>
+                    <Form noValidate validated={validated} className={"px-0 mx-0"} onSubmit={(event:React.FormEvent) => submitAuthorForm(event)}>
                         <FormGroup>
                             <Form.Label className="author-name-label">Name of Author</Form.Label>
                             <Form.Control
                                 className="author-name"
                                 type="text" onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleAuthorChangeEvent(event)}
                                 value={enteredAuthor} required/>
+                            <Form.Control.Feedback type="invalid">
+                                Please provide a valid author.
+                            </Form.Control.Feedback>
                         </FormGroup>
                         <Form.Group className="create-btn-container ">
-                            <Button className="create-btn " variant="primary" type="submit" size="sm">
+                            <Button className="create-btn btn-primary" variant="primary" type="submit" size="sm">
                                 Create
                             </Button>
                         </Form.Group>
