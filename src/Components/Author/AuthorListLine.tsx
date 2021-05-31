@@ -1,6 +1,6 @@
 import {Col, Row} from "react-bootstrap";
 import {Edit, Trash, Trash2} from "react-feather";
-import '../../assets/styles/partials/_AuthorListLine.scss';
+import '../../assets/styles/partials/_authorListLine.scss';
 import React, {FC, useState} from "react";
 import AddAuthorModel from "./AddAuthorModal";
 
