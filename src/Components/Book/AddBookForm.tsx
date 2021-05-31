@@ -3,7 +3,7 @@ import {Button, Col, Container, Form, Row} from "react-bootstrap";
 import {XCircle} from "react-feather";
 import IAuthor from "../../Interface/IAuthor";
 import * as CurrencyFormat from 'react-currency-format';
-import IBook from "../../Interface/IBook";
+import '../../assets/styles/partials/_addBookForm.scss';
 
 type AddBookProps = {
     createBook : (event:React.FormEvent,name:string,price:string,author:string) => void,
@@ -42,7 +42,7 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
         setBookAuthor(newBookAuthor);
     }
     return(
-        <Container fluid={true}>
+        <Container className="ab-form-container" fluid={true}>
             <Row>
                 <Col className={"add-book px-0"}>
                     Create Book
@@ -52,7 +52,7 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
                 </Col>
             </Row>
             <Row>
-                <Col md={8} xs={12}>
+                <Col md={8} xs={7}>
                     <Form
                         noValidate
                         className="ab-form"
