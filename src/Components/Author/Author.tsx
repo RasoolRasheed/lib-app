@@ -1,8 +1,4 @@
 import '../../assets/styles/Author.scss';
-import plusIcon from '../../assets/images/plus.svg';
-import crossIcon from '../../assets/images/x-circle.svg';
-import editIcon from '../../assets/images/edit.svg';
-import trashIcon from '../../assets/images/trash-2.svg';
 import AuthorListLine from "./AuthorListLine";
 import {Plus, XCircle} from "react-feather";
 import AddAuthorModel from "./AddAuthorModal";
@@ -18,7 +14,6 @@ const Author: React.FC<AuthorsProps> = (props) => {
 
     const [isVisibleAddAuthorForm,setIsVisibleAddAuthorForm] = useState<boolean>(false);
     let authorId: number = 1;
-
     const [authorsList,setAuthorsList] = useState<IAuthor[]>([]);
     const [isVisibleUpdateAuthorForm,setIsVisibleUpdateAuthorForm] = useState<boolean>(false);
     const [authorToBeUpdate, setAuthorToBeUpdate] = useState<number | null>(null);
@@ -45,8 +40,8 @@ const Author: React.FC<AuthorsProps> = (props) => {
     }
 
     const handleUpdateAuthorRequestEvent = (id: number) => {
-            setIsVisibleUpdateAuthorForm(true);
-            setAuthorToBeUpdate(id);
+        setIsVisibleUpdateAuthorForm(true);
+        setAuthorToBeUpdate(id);
     }
 
     const handleUpdateAuthorEvent = (event: React.FormEvent, name: string) =>
@@ -67,8 +62,7 @@ const Author: React.FC<AuthorsProps> = (props) => {
 
     }
 
-    const handleDeleteAuthorEvent = (id:number) =>
-    {
+    const handleDeleteAuthorEvent = (id:number) => {
         const authors: IAuthor[] = authorsList.slice();
         authors.splice(id - 1, 1);
         setAuthorsList(authors);
@@ -76,6 +70,7 @@ const Author: React.FC<AuthorsProps> = (props) => {
         // Sending to books section
         props.returnAvailableAuthors(authors);
     }
+
     return(
         <Container className="author-container px-5">
             <Row>
@@ -106,16 +101,18 @@ const Author: React.FC<AuthorsProps> = (props) => {
                             </ul>
                         </Col>
                     </Row>
-
                     <Row>
                         <Col className={"px-0 add-author-title"}>
-                            <Plus className={"add-author-plus"} onClick={ () => handleClickAddAuthorEvent()}></Plus> Add Author</Col>
+                            <Plus className={"add-author-plus"}
+                                  onClick={ () => handleClickAddAuthorEvent()}></Plus> Add Author</Col>
                     </Row>
                 </Col>
-                <Col className={"px-0"}>{
-                    isVisibleAddAuthorForm
-                    &&
-                    <AddAuthorModel closeForm={handleCloseEvent} createAuthor={handleCreateAuthorEvent}></AddAuthorModel>
+                <Col className={"px-0"}>
+                    {
+                        isVisibleAddAuthorForm
+                        &&
+                        <AddAuthorModel closeForm={handleCloseEvent}
+                                        createAuthor={handleCreateAuthorEvent}></AddAuthorModel>
                     }
                     {
                         isVisibleUpdateAuthorForm

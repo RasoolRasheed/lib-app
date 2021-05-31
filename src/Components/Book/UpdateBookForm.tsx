@@ -73,11 +73,8 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                 <Col md={1}/>
                 <Col md={9} xs={12}>
                     <Form
-                        noValidate
-                        validated={validated}
-                        className="ub-form"
-                        onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)}
-                    >
+                        noValidate validated={validated} className="ub-form"
+                        onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)} >
                         <Form.Group>
                             <Form.Label className="book-title-label">Title of the Book</Form.Label>
                             <Form.Control
@@ -98,17 +95,12 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                         <Form.Label className="book-price-label">Price</Form.Label>
                         <Form.Group>
                             <CurrencyFormat
-                                className="book-price-input"
-                                size="sm"
-                                inputMode="numeric"
-                                thousandSeparator={true}
-                                prefix={'$'}
-                                value={enteredPrice}
+                                className="book-price-input" size="sm" inputMode="numeric" thousandSeparator={true}
+                                prefix={'$'} value={enteredPrice}
                                 onChange={
                                     (event: React.ChangeEvent<HTMLInputElement>) =>
                                         handleEnterPriceChangeEvent(event)
-                                }
-                                required
+                                } required
                             />
                             <Form.Control.Feedback type="invalid">
                                 Please provide an price number.
@@ -117,15 +109,11 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                         <Form.Group>
                             <Form.Label className="book-author-label">Author</Form.Label>
                             <Form.Control
-                                className="book-author-input"
-                                size="sm"
-                                as="select"
+                                className="book-author-input" as="select"
                                 onChange={
                                     (event: React.ChangeEvent<HTMLSelectElement>) =>
                                         handleEnterAuthorChangeEvent(event)
-                                }
-                                required
-                            >
+                                }required>
                                 {
                                     (props.authors().length !== 0)
                                     &&
@@ -133,9 +121,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                         (author: IAuthor) => {
                                             return (
                                                 <option
-                                                    value={author.authorName}
-                                                    key={author.authorName}
-                                                >
+                                                    value={author.authorName} key={author.authorName}>
                                                     {author.authorName}
                                                 </option>
                                             );

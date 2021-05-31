@@ -3,7 +3,6 @@ $edit_btn_color: #ef921b;
 $trash_btn_color: #9d292a;
 
 li{
-  //padding-top: 2px;
   list-style-type:none;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -12,9 +11,6 @@ li{
 
   .trash-btn, .edit-btn {
     display: none;
-  }
-  .author-list-line .author-btn-container{
-
   }
 
   &:hover{

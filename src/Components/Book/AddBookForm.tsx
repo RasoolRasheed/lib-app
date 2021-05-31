@@ -27,7 +27,6 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
         event.preventDefault();
         event.stopPropagation();
         setValidated(true);
-
         const bookTitleToBeAdded = bookTitle;
         const priceToBeAdded = price;
         const bookAuthorToBeAdded = bookAuthor;
@@ -57,20 +56,14 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
                         noValidate
                         className="ab-form"
                         validated={validated}
-                        onSubmit={(event: React.FormEvent) => submitBookForm(event)}
-                    >
+                        onSubmit={(event: React.FormEvent) => submitBookForm(event)}>
                         <Form.Group>
                             <Form.Label className="book-title-label">Title of the Book</Form.Label>
                             <Form.Control
-                                className="book-title-input"
-                                type="text"
-                                size="sm"
-                                value={bookTitle}
+                                className="book-title-input" type="text" size="sm" value={bookTitle}
                                 onChange={
                                     (event: React.ChangeEvent<HTMLInputElement>) => handleBookTitleChangeEvent(event)
-                                }
-                                required
-                            />
+                                } required/>
                             <Form.Control.Feedback type="invalid">
                                 Please provide a book title.
                             </Form.Control.Feedback>
@@ -81,11 +74,11 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
                                 className="book-price-input"
                                 size="sm" inputMode="numeric" thousandSeparator={true} prefix={'$'}
                                 value={price} onValueChange={(values) => {
-                                        const {formattedValue, value} = values;
-                                        setPrice(value);
-                                    }
+                                const {formattedValue, value} = values;
+                                setPrice(value);
+                                }
                                 }required
-                                />
+                            />
                             <Form.Control.Feedback type="invalid">
                                 Please provide a Price.
                             </Form.Control.Feedback>
@@ -93,27 +86,22 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
                         <Form.Group>
                             <Form.Label className="book-author-label">Author</Form.Label>
                             <Form.Control
-                                className="book-author-input"
-                                size="sm"
-                                as="select"
+                                className="book-author-input"size="sm" as="select"
                                 onChange={
                                     (event: React.ChangeEvent<HTMLSelectElement>) => handleBookAuthorChangeEvent(event)
                                 }
-                                value={bookAuthor}
-                                required
-                            >
-                            {props.authors().map(
-                                (author: IAuthor) => {
-                                    return (
-                                        <option
-                                            value={author.authorName}
-                                            key={author.authorName}
-                                        >
-                                            {author.authorName}
-                                        </option>
-                                    );
-                                }
-                            )}
+                                value={bookAuthor} required>
+                                {props.authors().map(
+                                    (author: IAuthor) => {
+                                        return (
+                                            <option
+                                                value={author.authorName}
+                                                key={author.authorName}>
+                                                {author.authorName}
+                                            </option>
+                                        );
+                                    }
+                                )}
                             </Form.Control>
                             <Form.Control.Feedback type="invalid">
                                 Please select a book author.

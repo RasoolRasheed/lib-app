@@ -11,10 +11,7 @@ type AddAuthorModelProps = {
 const AddAuthorModel : React.FC<AddAuthorModelProps> = (props) => {
     const[enteredAuthor,setEnteredAuthor] = useState<string>("");
     const [validated, setValidated] = useState(false);
-    const inVisibleAddAuthorForm = () =>
-    {
 
-    }
     const handleAuthorChangeEvent = (event:React.ChangeEvent<HTMLInputElement>) => {
         const authorName = event.target.value;
         setEnteredAuthor(authorName);
@@ -42,12 +39,14 @@ const AddAuthorModel : React.FC<AddAuthorModelProps> = (props) => {
             </Row>
             <Row>
                 <Col className={"create-form px-3"} md={7}>
-                    <Form noValidate validated={validated} className={"px-0 mx-0"} onSubmit={(event:React.FormEvent) => submitAuthorForm(event)}>
+                    <Form noValidate validated={validated} className={"px-0 mx-0"}
+                          onSubmit={(event:React.FormEvent) => submitAuthorForm(event)}>
                         <FormGroup>
                             <Form.Label className="author-name-label">Name of Author</Form.Label>
                             <Form.Control
                                 className="author-name"
-                                type="text" onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleAuthorChangeEvent(event)}
+                                type="text"
+                                onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleAuthorChangeEvent(event)}
                                 value={enteredAuthor} required/>
                             <Form.Control.Feedback type="invalid">
                                 Please provide a valid author.
