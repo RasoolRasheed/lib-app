@@ -2,8 +2,8 @@ import IAuthor from "./IAuthor";
 
 interface IBook {
     bookName : string,
-    bookPrice : number,
-    bookAuthor : IAuthor;
+    bookPrice : string,
+    bookAuthor : string;
 }
 
 export default IBook;

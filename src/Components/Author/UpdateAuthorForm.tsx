@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Button, Col, Container, Form, FormControl, FormGroup, Row} from "react-bootstrap";
 import {XCircle} from "react-feather";
-import '../../assets/styles/partials/UpdateAuthorForm.scss';
+import '../../assets/styles/partials/_UpdateAuthorForm.scss';
 
 type UpdateAuthorForm = {
     currentAuthorName:string,
