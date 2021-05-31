@@ -14,12 +14,8 @@ const UpdateAuthorForm:React.FC<UpdateAuthorForm> = (props) => {
     const handleAuthorChange = (event:React.ChangeEvent<HTMLInputElement>) => {
         const updateAuthor = event.target.value;
         setUpdateAuthor(updateAuthor);
-        // return props.updateAuthor(event,updateAuthor);
     }
 
-    const closeUpdateForm = () => {
-
-    }
     const submitUpdateAuthorForm = (event:React.FormEvent) => {
         const authorToBeUpdated = updateAuthor;
         setUpdateAuthor("");
@@ -38,10 +34,14 @@ const UpdateAuthorForm:React.FC<UpdateAuthorForm> = (props) => {
             </Row>
             <Row>
                 <Col className={"update-form px-3"} md={7}>
-                    <Form className={"px-0 mx-0"} onSubmit={(event:React.FormEvent) => submitUpdateAuthorForm(event)}>
+                    <Form className={"px-0 mx-0"}
+                          onSubmit={(event:React.FormEvent) => submitUpdateAuthorForm(event)}>
                         <FormGroup>
                             <Form.Label className="author-name-label">Name of Author</Form.Label>
-                            <FormControl type="text" value={updateAuthor} onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleAuthorChange(event)}></FormControl>
+                            <FormControl type="text" value={updateAuthor}
+                                         onChange={(event:React.ChangeEvent<HTMLInputElement>) =>
+                                             handleAuthorChange(event)}>
+                            </FormControl>
                         </FormGroup>
                         <Form.Group className="update-btn-container">
                             <Button className="update-btn" variant="primary" type="submit" size="sm">

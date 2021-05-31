@@ -2,7 +2,6 @@ import {Col, Row} from "react-bootstrap";
 import {Edit, Trash, Trash2} from "react-feather";
 import '../../assets/styles/partials/_authorListLine.scss';
 import React, {FC, useState} from "react";
-import AddAuthorModel from "./AddAuthorModal";
 
 type authorsListLineProps = {
     name: string,
@@ -12,20 +11,6 @@ type authorsListLineProps = {
 }
 
 const AuthorListLine : React.FC<authorsListLineProps> = (props) => {
-
-    const [isVisibleAddAuthorForm,setIsVisibleAddAuthorForm] = useState<boolean>(false);
-
-    const handleUpdateModel = () => {
-        setIsVisibleAddAuthorForm(true);
-    }
-
-    const handleCloseEvent = () => {
-        setIsVisibleAddAuthorForm(false);
-    }
-
-    const handleUpdateAuthorEvent = () => {
-        // return props.createAuthor(event, "");
-    }
 
     return(
         <li>

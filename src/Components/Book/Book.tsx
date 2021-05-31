@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
-import crossIcon from "../../assets/images/x-circle.svg";
 import { Plus, Trash2, Edit } from 'react-feather';
 import '../../assets/styles/Book.scss';
 import AddBookForm from '../Book/AddBookForm';
@@ -53,6 +52,7 @@ const Books:React.FC<BooksProps> = (props) =>{
     const handleClickCloseUpdateFormEvent = () => {
         setIsVisibleUpdateBookForm(false);
     }
+
     // Delete a 'Book'
     const handleDeleteBookEvent = (id: number) => {
         const books: IBook[] = bookList.slice();
@@ -65,7 +65,6 @@ const Books:React.FC<BooksProps> = (props) =>{
         if (bookToBeUpdate === null) {
             return;
         }
-
         const books = bookList.slice();
         const newBook: IBook = {bookName: title, bookPrice: price, bookAuthor: author};
         books.splice(bookToBeUpdate - 1, 1, newBook);
@@ -90,12 +89,8 @@ const Books:React.FC<BooksProps> = (props) =>{
                             (book: IBook) => {
                                 return (
                                     <BookListLine
-                                        title={book.bookName}
-                                        price={book.bookPrice}
-                                        author={book.bookAuthor}
-                                        id={bookId++}
-                                        key={bookId}
-                                        delete={handleDeleteBookEvent}
+                                        title={book.bookName} price={book.bookPrice} author={book.bookAuthor}
+                                        id={bookId++} key={bookId} delete={handleDeleteBookEvent}
                                         updateRequest={handleUpdateBookRequestEvent}
                                     />
                                 );
@@ -104,7 +99,6 @@ const Books:React.FC<BooksProps> = (props) =>{
                     </ul>
                 </Col>
                 <Col sm={12} md={12}>
-                    {/*<span className="no-books"><i>No books listed here</i></span>*/}
                     <p className="add-book pt-3">
                         <Plus color="#034fa5" className="add-book-plus" onClick={handleAddBookForm}/>
                         <span className="add-book-text">
@@ -135,7 +129,6 @@ const Books:React.FC<BooksProps> = (props) =>{
                         />
                     }
                 </Col>
-
             </Row>
         </Container>
     );
