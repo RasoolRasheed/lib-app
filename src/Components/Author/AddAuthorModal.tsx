@@ -1,7 +1,7 @@
 import React, {FC,useState} from "react";
 import {Button, Col, Container, Form, FormGroup, Row} from "react-bootstrap";
 import {XCircle} from "react-feather";
-import '../../assets/styles/partials/AddAuthorModal.scss';
+import '../../assets/styles/partials/_AddAuthorModal.scss';
 
 type AddAuthorModelProps = {
     closeForm : () => void,
