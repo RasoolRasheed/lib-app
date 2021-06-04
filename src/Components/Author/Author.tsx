@@ -1,9 +1,9 @@
 import '../../assets/styles/Author.scss';
 import AuthorListLine from "./AuthorListLine";
-import {Plus, XCircle} from "react-feather";
+import {Plus} from "react-feather";
 import AddAuthorModel from "./AddAuthorModal";
 import IAuthor from "../../Interface/IAuthor";
-import React, {FC,useState} from "react";
+import React, {useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import UpdateAuthorForm from "./UpdateAuthorForm";
 
@@ -44,8 +44,7 @@ const Author: React.FC<AuthorsProps> = (props) => {
         setAuthorToBeUpdate(id);
     }
 
-    const handleUpdateAuthorEvent = (event: React.FormEvent, name: string) =>
-    {
+    const handleUpdateAuthorEvent = (event: React.FormEvent, name: string) => {
         if (authorToBeUpdate === null) {
             return;
         }
@@ -82,7 +81,6 @@ const Author: React.FC<AuthorsProps> = (props) => {
                         {
                             authorsList.length === 0 &&
                             <Col><i>No authors added</i></Col>
-
                         }
                         <Col md={12}>
                             <ul className="author-list px-0">
@@ -90,9 +88,7 @@ const Author: React.FC<AuthorsProps> = (props) => {
                                     (author: IAuthor) => {
                                         return (
                                             <AuthorListLine
-                                                name={author.authorName}
-                                                id={authorId++}
-                                                key={authorId}
+                                                name={author.authorName} id={authorId++} key={authorId}
                                                 updateRequest={handleUpdateAuthorRequestEvent}
                                                 delete={handleDeleteAuthorEvent}/>
                                         );
@@ -104,15 +100,14 @@ const Author: React.FC<AuthorsProps> = (props) => {
                     <Row>
                         <Col className={"px-0 add-author-title"}>
                             <Plus className={"add-author-plus"}
-                                  onClick={ () => handleClickAddAuthorEvent()}></Plus> Add Author</Col>
+                                  onClick={ () => handleClickAddAuthorEvent()}/> Add Author</Col>
                     </Row>
                 </Col>
                 <Col className={"px-0"}>
                     {
                         isVisibleAddAuthorForm
                         &&
-                        <AddAuthorModel closeForm={handleCloseEvent}
-                                        createAuthor={handleCreateAuthorEvent}></AddAuthorModel>
+                        <AddAuthorModel closeForm={handleCloseEvent} createAuthor={handleCreateAuthorEvent}/>
                     }
                     {
                         isVisibleUpdateAuthorForm

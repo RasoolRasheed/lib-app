@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
-import { Plus, Trash2, Edit } from 'react-feather';
+import { Plus } from 'react-feather';
 import '../../assets/styles/Book.scss';
 import AddBookForm from '../Book/AddBookForm';
 import IAuthor from "../../Interface/IAuthor";
@@ -81,7 +81,7 @@ const Books:React.FC<BooksProps> = (props) =>{
                     <h3 className="books-title">Books</h3>
                 </Col>
                 {
-                    bookList.length===0 && <NoBooks></NoBooks>
+                    bookList.length===0 && <NoBooks/>
                 }
                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                     <ul className="book-list px-0">

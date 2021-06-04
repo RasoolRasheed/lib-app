@@ -1,6 +1,5 @@
-import React, {ReactElement, useState} from 'react';
-import LibraryImage from '../assets/images/anna-hunko-ajE5goOGzZc-unsplash-min.jpg';
-import {Col, Container, Image, Row} from "react-bootstrap";
+import React, { useState} from 'react';
+import {Col, Container, Row} from "react-bootstrap";
 import '../assets/styles/Library.scss'
 import Author from "../Components/Author/Author";
 import Book from "../Components/Book/Book";
@@ -25,11 +24,11 @@ const Library:React.FC =() =>{
     return(
         <Container className="Library" fluid>
             <Row>
-                <Welcome></Welcome>
+                <Welcome/>
             </Row>
             <Row>
-                <Col sm={6}><Book authorsAvailable={sendAvailableAuthors}></Book></Col>
-                <Col sm={6}><Author returnAvailableAuthors={getAvailableAuthors}></Author></Col>
+                <Col sm={6}><Book authorsAvailable={sendAvailableAuthors}/></Col>
+                <Col sm={6}><Author returnAvailableAuthors={getAvailableAuthors}/></Col>
             </Row>
             <LibraryFooter/>
         </Container>);

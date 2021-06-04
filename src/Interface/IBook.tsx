@@ -1,5 +1,3 @@
-import IAuthor from "./IAuthor";
-
 interface IBook {
     bookName : string,
     bookPrice : string,

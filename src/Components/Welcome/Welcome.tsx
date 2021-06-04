@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Container, Row} from "react-bootstrap";
+import {Col, Container, Image, Row} from "react-bootstrap";
 import LibraryImage from "../../assets/images/anna-hunko-ajE5goOGzZc-unsplash-min.jpg";
 
 const Welcome:React.FC = () =>{
@@ -10,7 +10,7 @@ const Welcome:React.FC = () =>{
                     <h1 className={"text-center py-2"}>My Library</h1>
                 </Col>
                 <Col className="px-0" xs={12}>
-                    <img src={LibraryImage} alt="Library Image"/>
+                    <Image src={LibraryImage} alt="Library Image"/>
                 </Col>
             </Row>
             <Row className={"credits"}>

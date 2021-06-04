@@ -1,7 +1,7 @@
 import {Col, Row} from "react-bootstrap";
-import {Edit, Trash, Trash2} from "react-feather";
+import {Edit, Trash2} from "react-feather";
 import '../../assets/styles/partials/_authorListLine.scss';
-import React, {FC, useState} from "react";
+import React from "react";
 
 type authorsListLineProps = {
     name: string,
@@ -20,7 +20,7 @@ const AuthorListLine : React.FC<authorsListLineProps> = (props) => {
                     <Edit className="edit-btn" onClick={() => props.updateRequest(props.id)}/>
                 </Col>
                 <Col>
-                    <Trash2 className="trash-btn" onClick={() => props.delete(props.id)}></Trash2>
+                    <Trash2 className="trash-btn" onClick={() => props.delete(props.id)}/>
                 </Col>
             </Row>
         </li>

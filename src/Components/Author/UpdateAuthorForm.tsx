@@ -3,12 +3,12 @@ import {Button, Col, Container, Form, FormControl, FormGroup, Row} from "react-b
 import {XCircle} from "react-feather";
 import '../../assets/styles/partials/_updateAuthorForm.scss';
 
-type UpdateAuthorForm = {
+type UpdateAuthorFormProps = {
     currentAuthorName:string,
     closeForm : ()  => void,
     updateAuthor: (event: React.FormEvent, name: string) => void
 }
-const UpdateAuthorForm:React.FC<UpdateAuthorForm> = (props) => {
+const UpdateAuthorForm:React.FC<UpdateAuthorFormProps> = (props) => {
     const [updateAuthor,setUpdateAuthor] = useState<string>("");
 
     const handleAuthorChange = (event:React.ChangeEvent<HTMLInputElement>) => {
