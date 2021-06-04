@@ -1,6 +1,4 @@
-$cb_title_color: #084732;
-$input_field_border_color: #959595;
-$create_btn_color: #00579c;
+@import "src/assets/styles/CommonVariables";
 
 .ab-form-container {
   padding-left: 0;
@@ -20,7 +18,6 @@ $create_btn_color: #00579c;
       min-width: 6em;
     }
   }
-
   .close-btn {
     padding-top: 0.4em;
 
@@ -44,7 +41,7 @@ $create_btn_color: #00579c;
     }
 
     .create-btn-container {
-      margin-top: 2em;
+      margin-top: 1em;
       margin-bottom: 10em;
       float: right;
 

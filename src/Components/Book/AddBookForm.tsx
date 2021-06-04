@@ -43,15 +43,15 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
     return(
         <Container className="ab-form-container" fluid={true}>
             <Row>
-                <Col className={"add-book px-0"}>
-                    Create Book
+                <Col className={"cb-title px-0"}>
+                    <u>Create Book</u>
                 </Col>
                 <Col>
-                    <XCircle className={"add-book-xcircle"} onClick={props.closeForm}></XCircle>
+                    <XCircle className={"add-book-xcircle"} onClick={props.closeForm}/>
                 </Col>
             </Row>
             <Row>
-                <Col md={8} xs={7}>
+                <Col md={8} xs={10}>
                     <Form
                         noValidate
                         className="ab-form"
@@ -74,10 +74,10 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
                                 className="book-price-input"
                                 size="sm" inputMode="numeric" thousandSeparator={true} prefix={'$'}
                                 value={price} onValueChange={(values) => {
-                                const {formattedValue, value} = values;
+                                const {value} = values;
                                 setPrice(value);
-                                }
-                                }required
+                            }
+                            } required
                             />
                             <Form.Control.Feedback type="invalid">
                                 Please provide a Price.
@@ -86,9 +86,10 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
                         <Form.Group>
                             <Form.Label className="book-author-label">Author</Form.Label>
                             <Form.Control
-                                className="book-author-input"size="sm" as="select"
+                                className="book-author-input" size="sm" as="select"
                                 onChange={
-                                    (event: React.ChangeEvent<HTMLSelectElement>) => handleBookAuthorChangeEvent(event)
+                                    (event: React.ChangeEvent<HTMLSelectElement>) =>
+                                        handleBookAuthorChangeEvent(event)
                                 }
                                 value={bookAuthor} required>
                                 {props.authors().map(
@@ -107,7 +108,7 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
                                 Please select a book author.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="create-btn-container">
+                        <Form.Group className="create-btn-container px-0">
                             <Button className="create-btn" variant="primary" type="submit" size="sm">
                                 Create
                             </Button>

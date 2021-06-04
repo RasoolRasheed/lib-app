@@ -1,9 +1,9 @@
-$title_font_color: #253439;
-$credits_font_color: #2d2d2d;
+@import "src/assets/styles/CommonVariables";
 
 .Library {
   font-family: 'Raleway', sans-serif;
-  margin-bottom: 10em;
+  margin-bottom: 5em;
+
   h1 {
     color: $title_font_color;
     font-weight: 700;

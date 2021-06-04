@@ -113,7 +113,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 onChange={
                                     (event: React.ChangeEvent<HTMLSelectElement>) =>
                                         handleEnterAuthorChangeEvent(event)
-                                }required>
+                                } required>
                                 {
                                     (props.authors().length !== 0)
                                     &&

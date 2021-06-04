@@ -1,4 +1,4 @@
-import React, {FC,useState} from "react";
+import React, {useState} from "react";
 import {Button, Col, Container, Form, FormGroup, Row} from "react-bootstrap";
 import {XCircle} from "react-feather";
 import '../../assets/styles/partials/_addAuthorModal.scss';
