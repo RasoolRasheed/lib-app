@@ -1,13 +1,12 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import '../assets/styles/Library.scss'
 import Author from "../Components/Author/Author";
 import Book from "../Components/Book/Book";
 import IAuthor from "../Interface/IAuthor";
 import Welcome from "../Components/Welcome/Welcome";
 import LibraryFooter from "../Components/Footer/LibraryFooter";
 
-const Library:React.FC =() =>{
+const Library: React.FC = () => {
     // Author list to be rendered inside add book form
     const [fullAuthorList, setFullAuthorList] = useState<IAuthor[]>([]);
 
@@ -21,7 +20,7 @@ const Library:React.FC =() =>{
         return fullAuthorList;
     }
 
-    return(
+    return (
         <Container className="Library" fluid>
             <Row>
                 <Welcome/>

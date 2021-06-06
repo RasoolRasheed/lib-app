@@ -1,10 +1,10 @@
 import React from "react";
-import {Col, Container, Image, Row} from "react-bootstrap";
+import {Col, Image, Row} from "react-bootstrap";
 import LibraryImage from "../../assets/images/anna-hunko-ajE5goOGzZc-unsplash-min.jpg";
 
-const Welcome:React.FC = () =>{
-    return(
-        <Container>
+const Welcome: React.FC = () => {
+    return (
+        <Col>
             <Row>
                 <Col className="px-0" xs={12}>
                     <h1 className={"text-center py-2"}>My Library</h1>
@@ -26,7 +26,7 @@ const Welcome:React.FC = () =>{
                 </a>
                 </Col>
             </Row>
-        </Container>
+        </Col>
     )
 }
 
