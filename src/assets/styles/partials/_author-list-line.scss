@@ -1,7 +1,19 @@
-@import "src/assets/styles/CommonVariables";
+@import "../common-variables";
 
-li{
-  list-style-type:none;
+.author-list-line {
+  .author-list-line-btn-container {
+    float: right;
+    padding-right: 1px;
+    .edit-btn {
+
+
+    }
+  }
+}
+
+
+li {
+  list-style-type: none;
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: x-large;
@@ -11,17 +23,19 @@ li{
     display: none;
   }
 
-  &:hover{
-    .edit-btn{
+  &:hover {
+    .edit-btn {
       display: inline;
       cursor: pointer;
       color: $edit_btn_color;
     }
-    .trash-btn{
+
+    .trash-btn {
       display: inline;
       color: $trash_btn_color;
       cursor: pointer;
     }
+
     background-color: $author_list_hover_color;
   }
 

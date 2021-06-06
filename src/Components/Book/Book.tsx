@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import { Plus } from 'react-feather';
-import '../../assets/styles/Book.scss';
 import AddBookForm from '../Book/AddBookForm';
 import IAuthor from "../../Interface/IAuthor";
 import IBook from '../../Interface/IBook';

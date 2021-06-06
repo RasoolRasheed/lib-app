@@ -1,4 +1,4 @@
-@import "src/assets/styles/CommonVariables";
+@import "common-variables";
 
 .add-author-title{
   padding: 25px;
@@ -13,7 +13,7 @@
   color: $title_font_color;
   font-weight: 500;
   font-size: 2em;
-  border-bottom: 2px solid $title_font_color;
+  border-bottom: 1px solid $title_font_color;
   padding-left: 0;
   margin-bottom: 0.7em;
 }

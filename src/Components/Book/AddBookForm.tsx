@@ -3,7 +3,8 @@ import {Button, Col, Container, Form, Row} from "react-bootstrap";
 import {XCircle} from "react-feather";
 import IAuthor from "../../Interface/IAuthor";
 import * as CurrencyFormat from 'react-currency-format';
-import '../../assets/styles/partials/_addBookForm.scss';
+import '../../assets/styles/partials/_add-book-form.scss';
+import Select from 'react-select';
 
 type AddBookProps = {
     createBook : (event:React.FormEvent,name:string,price:string,author:string) => void,
@@ -15,7 +16,7 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
     const [bookTitle, setBookTitle] = useState<string>("");
     // Book Price
     const [price, setPrice] = useState<string>("");
-    const [bookAuthor, setBookAuthor] = useState<string>("");
+    const [bookAuthor, setBookAuthor] = useState<any >("");
     const [validated,setValidated] = useState<boolean>(false);
 
     const handleBookTitleChangeEvent = (event:React.ChangeEvent<HTMLInputElement>) =>{
@@ -32,14 +33,19 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
         const bookAuthorToBeAdded = bookAuthor;
         setBookTitle("");
         setPrice("");
-
+        console.log(bookAuthor);
         return props.createBook(event,bookTitleToBeAdded,priceToBeAdded,bookAuthorToBeAdded);
     }
     // Change book Author
-    const handleBookAuthorChangeEvent = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const newBookAuthor = event.target.value;
+    const handleBookAuthorChangeEvent = (event: React.SelectHTMLAttributes<HTMLSelectElement>) => {
+        const newBookAuthor = event.value;
         setBookAuthor(newBookAuthor);
     }
+
+    const authorsOptions = props.authors().map(
+        ({ authorName}) => ({ label: authorName, value: authorName })
+    );
+
     return(
         <Container className="ab-form-container" fluid={true}>
             <Row>
@@ -85,25 +91,11 @@ const AddBookForm:React.FC<AddBookProps> = (props) => {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label className="book-author-label">Author</Form.Label>
-                            <Form.Control
-                                className="book-author-input" size="sm" as="select"
-                                onChange={
-                                    (event: React.ChangeEvent<HTMLSelectElement>) =>
-                                        handleBookAuthorChangeEvent(event)
-                                }
-                                value={bookAuthor} required>
-                                {props.authors().map(
-                                    (author: IAuthor) => {
-                                        return (
-                                            <option
-                                                value={author.authorName}
-                                                key={author.authorName}>
-                                                {author.authorName}
-                                            </option>
-                                        );
-                                    }
-                                )}
-                            </Form.Control>
+                            <Select
+                                //value={bookAuthor}
+                                onChange={(event: React.SelectHTMLAttributes<HTMLSelectElement>) => handleBookAuthorChangeEvent(event)}
+                                options={authorsOptions}
+                            />
                             <Form.Control.Feedback type="invalid">
                                 Please select a book author.
                             </Form.Control.Feedback>
