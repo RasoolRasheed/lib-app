@@ -1,8 +1,8 @@
 @import "../common-variables";
 
-.ab-form-container {
+.add-book-row {
   padding-left: 0;
-  margin-top: 3em;
+  margin-top: 2em;
 
   .cb-title {
     color: $cb_title_color;
@@ -18,8 +18,10 @@
       min-width: 6em;
     }
   }
+
   .close-btn {
-    padding-top: 0.4em;
+    //padding-top: 0.4em;
+    text-align: right;
 
     .close-icon {
       cursor: pointer;
@@ -27,15 +29,14 @@
   }
 
   .ab-form {
+    margin-left: 3em;
+
     .book-title-label, .book-price-label, .book-author-label {
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
       font-size: 12px;
       font-weight: 500;
     }
 
     .book-title-input, .book-price-input, .book-author-input {
-      width: 28vw;
       border: 2px solid $input_field_border_color;
       border-radius: 0;
     }

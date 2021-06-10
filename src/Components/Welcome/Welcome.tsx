@@ -1,6 +1,6 @@
 import React from "react";
 import {Col, Image, Row} from "react-bootstrap";
-import LibraryImage from "../../assets/images/anna-hunko-ajE5goOGzZc-unsplash-min.jpg";
+import LibraryImage from "../../assets/images/anna-hunko-ajE5goOGzZc-unsplash.jpg";
 
 const Welcome: React.FC = () => {
     return (
