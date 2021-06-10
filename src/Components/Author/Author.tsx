@@ -71,10 +71,10 @@ const Author: React.FC<AuthorsProps> = (props) => {
     }
 
     return (
-        <Row className="author-container px-5">
+        <Row className="author-container px-3">
             <Col sm={12} md={12}>
                 <Row>
-                    <Col><p className={"author-title"}>Authors</p></Col>
+                    <Col className={"author"}><p className={"author-title"}>Authors</p></Col>
                 </Row>
                 <Row>
                     {

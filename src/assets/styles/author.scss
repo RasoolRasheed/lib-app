@@ -1,25 +1,26 @@
 @import "common-variables";
 
-.add-author-title{
+.add-author-title {
   padding: 25px;
 }
 
-.add-author-plus{
+.add-author-plus {
   cursor: pointer;
   color: cornflowerblue;
 }
 
-.author-container .author-title {
-  color: $title_font_color;
-  font-weight: 500;
-  font-size: 2em;
-  border-bottom: 1px solid $title_font_color;
-  padding-left: 0;
-  margin-bottom: 0.7em;
+.author-container {
+  .author-title {
+    color: $title_font_color;
+    font-weight: 500;
+    font-size: 2em;
+    border-bottom: 1px solid $title_font_color;
+    padding-left: 0;
+    margin-bottom: 0.7em;
+  }
 }
-
-.create-author-title{
-  color:darkgreen;
+.create-author-title {
+  color: darkgreen;
   text-decoration: underline;
   font-size: large;
 }

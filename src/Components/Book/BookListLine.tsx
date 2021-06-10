@@ -2,11 +2,12 @@ import {Col, OverlayTrigger, Row, Tooltip} from "react-bootstrap";
 import React, {useState} from "react";
 import {Edit, Trash2} from "react-feather";
 import DeleteBookModal from "./DeleteBookModal";
+import IAuthor from "../../Interface/IAuthor";
 
 type BookListLineProps={
     title: string,
     price: string,
-    author: string,
+    author: IAuthor[],
     id: number,
     delete: (id: number) => void,
     updateRequest: (id: number) => void

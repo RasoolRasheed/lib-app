@@ -15,6 +15,7 @@ type BooksProps = {
 const Books:React.FC<BooksProps> = (props) =>{
     let bookId: number = 1;
     const [isVisibleAddBookForm,setIsVisibleAddBookForm] = useState<boolean>(false);
+
     const [bookList,setBookList] = useState<IBook[]>([]);
     // Visibility of 'UpdateBook' form
     const [isVisibleUpdateBookForm, setIsVisibleUpdateBookForm] = useState<boolean>(false);
@@ -29,13 +30,12 @@ const Books:React.FC<BooksProps> = (props) =>{
         setIsVisibleAddBookForm(true);
     }
 
-    const handleCreateBook = (event:React.FormEvent,name:string,price:string,author:string) => {
+    const handleCreateBook = (event:React.FormEvent,name:string,price:string,author:IAuthor[]) => {
         event.preventDefault();
         const newBook:IBook = {bookName:name,bookPrice:price,bookAuthor:author};
         const book = bookList.slice();
         book.push(newBook);
         setBookList(book);
-        console.log(book);
         setIsVisibleAddBookForm(false);
     }
 
@@ -60,7 +60,7 @@ const Books:React.FC<BooksProps> = (props) =>{
         setIsVisibleUpdateBookForm(false);
     }
 
-    const handleUpdateBookEvent = (event: React.FormEvent, title: string, price: string, author: string) => {
+    const handleUpdateBookEvent = (event: React.FormEvent, title: string, price: string, author: IAuthor[]) => {
         if (bookToBeUpdate === null) {
             return;
         }
@@ -74,8 +74,7 @@ const Books:React.FC<BooksProps> = (props) =>{
     }
 
     return(
-        <Container className={"px-5"}>
-            <Row className="Books px-0">
+            <Row className="books px-5">
                 <Col sm={12} md={12}>
                     <h3 className="books-title">Books</h3>
                 </Col>
@@ -121,7 +120,7 @@ const Books:React.FC<BooksProps> = (props) =>{
                         <UpdateBookForm
                             currentTitle={bookToBeUpdate === null ? "" : bookList[bookToBeUpdate - 1].bookName}
                             currentPrice={bookToBeUpdate === null ? "" : bookList[bookToBeUpdate - 1].bookPrice}
-                            currentAuthor={bookToBeUpdate === null ? "" : bookList[bookToBeUpdate - 1].bookAuthor}
+                            currentAuthor={bookToBeUpdate === null ? []: bookList[bookToBeUpdate - 1].bookAuthor}
                             closeForm={handleClickCloseUpdateFormEvent}
                             updateBook={handleUpdateBookEvent}
                             authors={props.authorsAvailable}
@@ -129,7 +128,6 @@ const Books:React.FC<BooksProps> = (props) =>{
                     }
                 </Col>
             </Row>
-        </Container>
     );
 }
 

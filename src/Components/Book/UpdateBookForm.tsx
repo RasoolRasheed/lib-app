@@ -1,16 +1,17 @@
 import React, {FC, useState} from 'react';
-import {Col, Container, Row, Button, Form} from "react-bootstrap";
+import {Button, Col, Container, Form, Row} from "react-bootstrap";
 import {XCircle} from 'react-feather';
 import IAuthor from "../../Interface/IAuthor";
 import * as CurrencyFormat from 'react-currency-format';
+import Select from 'react-select';
 
 type UpdateBookFormProps = {
     closeForm: () => void,
-    updateBook: (event: React.FormEvent, title: string, price: string, author: string) => void,
+    updateBook: (event: React.FormEvent, title: string, price: string, author: IAuthor[]) => void,
     authors: () => IAuthor[],
     currentTitle: string,
     currentPrice: string,
-    currentAuthor: string
+    currentAuthor: IAuthor[]
 };
 
 const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
@@ -19,14 +20,13 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     // Book title
     const [enteredTitle, setEnteredTitle] = useState<string>(props.currentTitle);
     // Book Author
-    const [enteredAuthor, setEnteredAuthor] = useState<string>(props.currentAuthor);
+    const [enteredAuthor, setEnteredAuthor] = useState<IAuthor[]>(props.currentAuthor);
     // Validate
     const [validated, setValidated] = useState<boolean>(false);
 
     // Handling changes of book author field
-    const handleEnterAuthorChangeEvent = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const authorName = event.target.value;
-        setEnteredAuthor(authorName);
+    const handleEnterAuthorChangeEvent = (event) => {
+        setEnteredAuthor(event);
     }
     // Handling changes of book price field
     const handleEnterPriceChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,40 +43,43 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
         event.preventDefault()
         event.stopPropagation()
         setValidated(true);
-        if (enteredTitle === "" || enteredPrice === "") {
+        if (enteredTitle === "" || enteredPrice === "" || enteredAuthor === []) {
             return;
         }
 
         const bookTitleToBeUpdated = enteredTitle;
         const bookPriceToBeUpdated = enteredPrice;
-        const bookAuthorToBeUpdated = enteredAuthor;
+        const bookAuthorToBeUpdated:IAuthor[] = enteredAuthor;
         setEnteredTitle("");
         setEnteredPrice("");
-        setEnteredAuthor("");
+        setEnteredAuthor([]);
         return props.updateBook(event, bookTitleToBeUpdated, bookPriceToBeUpdated, bookAuthorToBeUpdated);
     }
 
+    const authorsOptions = props.authors().map(
+        ({ authorName}) => ({ label: authorName, value: authorName })
+    );
+
     return (
-        <Container className="ub-form-container" fluid={true}>
             <Row>
                 <Col md={9} xs={12}>
                     <Row>
                         <Col className="ub-title" md={11} xs={10}>
-                            <p className="ub-title-text">Update Book</p>
+                            <p className="ub-title-text"><u>Update Book</u></p>
                         </Col>
                         <Col className="close-btn" md={1} xs={2} onClick={() => props.closeForm()}>
                             <XCircle className="close-icon"/>
                         </Col>
                     </Row>
                 </Col>
-                <Col md={3}/>
-                <Col md={1}/>
-                <Col md={9} xs={12}>
+                <Col md={3} xs={12}/>
+                <Col md={1} xs={12}/>
+                <Col md={8} xs={12}>
                     <Form
                         noValidate validated={validated} className="ub-form"
                         onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)} >
                         <Form.Group>
-                            <Form.Label className="book-title-label">Title of the Book</Form.Label>
+                            <Form.Label className="book-title-label mt-2 mb-0">Title of the Book</Form.Label>
                             <Form.Control
                                 className="book-title-input"
                                 type="text"
@@ -92,9 +95,10 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 Please provide a book title.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Label className="book-price-label">Price</Form.Label>
+                        <Form.Label className="book-price-label mt-2 mb-0">Price</Form.Label>
                         <Form.Group>
                             <CurrencyFormat
+                                style={{width: '100%'}}
                                 className="book-price-input" size="sm" inputMode="numeric" thousandSeparator={true}
                                 prefix={'$'} value={enteredPrice}
                                 onChange={
@@ -107,28 +111,13 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label className="book-author-label">Author</Form.Label>
-                            <Form.Control
-                                className="book-author-input" as="select"
-                                onChange={
-                                    (event: React.ChangeEvent<HTMLSelectElement>) =>
-                                        handleEnterAuthorChangeEvent(event)
-                                } required>
-                                {
-                                    (props.authors().length !== 0)
-                                    &&
-                                    props.authors().map(
-                                        (author: IAuthor) => {
-                                            return (
-                                                <option
-                                                    value={author.authorName} key={author.authorName}>
-                                                    {author.authorName}
-                                                </option>
-                                            );
-                                        }
-                                    )
-                                }
-                            </Form.Control>
+                            <Form.Label className="book-author-label mt-2 mb-0">Author</Form.Label>
+                            <Select isClearable={true}
+                                    defaultValue={props.authors[0]}
+                                    onChange={handleEnterAuthorChangeEvent}
+                                    options={authorsOptions}
+                                required
+                            />
                             <Form.Control.Feedback type="invalid">
                                 Please select an author.
                             </Form.Control.Feedback>
@@ -141,7 +130,6 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                     </Form>
                 </Col>
             </Row>
-        </Container>
     );
 }
 
