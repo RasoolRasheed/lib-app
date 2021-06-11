@@ -1,0 +1,57 @@
+@import "../common-variables";
+
+.add-book-row {
+  padding-left: 0;
+  margin-top: 2em;
+
+  .cb-title {
+    color: $cb_title_color;
+    margin-bottom: 0.6em;
+    font-weight: 500;
+    font-size: x-large;
+
+    .cb-title-text {
+      border-bottom: 3px solid $cb_title_color;
+      margin: 0;
+      max-height: 1.35em;
+      max-width: 7em;
+      min-width: 6em;
+    }
+  }
+
+  .close-btn {
+    //padding-top: 0.4em;
+    text-align: right;
+
+    .close-icon {
+      cursor: pointer;
+    }
+  }
+
+  .ab-form {
+    margin-left: 3em;
+
+    .book-title-label, .book-price-label, .book-author-label {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .book-title-input, .book-price-input, .book-author-input {
+      border: 2px solid $input_field_border_color;
+      border-radius: 0;
+    }
+
+    .create-btn-container {
+      margin-top: 1em;
+      margin-bottom: 10em;
+      float: right;
+
+      .create-btn {
+        border-radius: 6px;
+        background-color: $create_btn_color;
+        height: 2em;
+        width: 6.8em;
+      }
+    }
+  }
+}

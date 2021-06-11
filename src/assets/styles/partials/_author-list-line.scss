@@ -1,0 +1,43 @@
+@import "../common-variables";
+
+.author-list-line {
+  .author-list-line-btn-container {
+    float: right;
+    padding-right: 1px;
+    .edit-btn {
+
+
+    }
+  }
+}
+
+
+li {
+  list-style-type: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: x-large;
+  font-weight: 400;
+
+  .trash-btn, .edit-btn {
+    display: none;
+    margin-left: 2px;
+  }
+
+  &:hover {
+    .edit-btn {
+      display: inline;
+      cursor: pointer;
+      color: $edit_btn_color;
+    }
+
+    .trash-btn {
+      display: inline;
+      color: $trash_btn_color;
+      cursor: pointer;
+    }
+
+    background-color: $author_list_hover_color;
+  }
+
+}

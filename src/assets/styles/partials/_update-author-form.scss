@@ -1,0 +1,35 @@
+@import "../common-variables";
+
+.edit-close-btn{
+  cursor: pointer;
+}
+.update-btn-container {
+  float: right;
+
+  .update-btn{
+    margin-top: 1em;
+  }
+}
+
+.update-btn-container {
+  text-align: right;
+
+  .update-btn {
+    border-radius: 6px;
+    background-color: $update_btn_color;
+    height: 2em;
+    width: 6.8em;
+  }
+}
+
+.update-author-title {
+  font-weight: 500;
+  font-size: x-large;
+  color: $ub_title_color;
+}
+
+.update-author-title-xcircle {
+  cursor: pointer;
+  float:right;
+  color: black;
+}

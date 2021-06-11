@@ -1,0 +1,31 @@
+@import "../common-variables";
+
+.create-author-title{
+  font-weight: 500;
+  font-size: x-large;
+  color: $ub_title_color;
+}
+
+.create-author-title-xcircle{
+  cursor: pointer;
+  float:right;
+  color: black;
+}
+
+.author-name-label{
+  font-size: 0.9em;
+}
+
+.create-form{
+  margin-top: 1em;
+  .create-btn-container {
+    text-align: right;
+
+    .create-btn {
+      border-radius: 6px;
+      background-color: $update_btn_color;
+      height: 2em;
+      width: 6.8em;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import "common-variables";
+@import "partials/update-book-form";
+
+.books{
+  margin-left: 2em;
+  .books-title {
+    font-size: 2em;
+    font-weight: 500;
+    border-bottom: 1px solid $title_font_color;
+    padding-left: 0;
+    margin-bottom: 0.7em;
+    margin-top: 0.3em;
+    margin-left: 0;
+  }
+
+  .add-book-plus {
+    cursor: pointer;
+  }
+
+  .add-book-xcircle {
+    cursor: pointer;
+  }
+}
