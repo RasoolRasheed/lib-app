@@ -31,7 +31,7 @@ const UpdateAuthorForm:React.FC<UpdateAuthorFormProps> = (props) => {
     return(
         <Container fluid={true}>
             <Row>
-                <Col xs={9} sm={10} md={10} xl={10} lg={10}>
+                <Col xs={9} sm={10} md={10} xl={10} lg={9}>
                     <p className={"update-author-title px-0"}><u>Update Author</u></p>
                 </Col>
                 <Col xs={1} sm={2} md={1} xl={1} lg={1} className={"px-0"}>

@@ -53,19 +53,19 @@ const AddBookForm: React.FC<AddBookProps> = (props) => {
     return (
         <Row className={"add-book-row"}>
             {/*<CreateBookTitle closeForm={}/>*/}
-            <Col xs={12} xl={8} sm={12} md={9}>
+            <Col xs={12} xl={8} sm={12} md={12}>
                 <Row>
-                    <Col md={11} xs={2} className={"cb-title"}>
+                    <Col xs={10} xl={9} sm={11} md={10} lg={9} className={"cb-title"}>
                         <u>Create Book</u>
                     </Col>
-                    <Col md={1} xs={2}>
+                    <Col xs={1} xl={1} sm={1} md={1} lg={2}>
                         <XCircle className={"add-book-xcircle"} onClick={props.closeForm}/>
                     </Col>
                 </Row>
             </Col>
-            <Col md={3} xs={12}/>
-            <Col md={1} xs={12}/>
-            <Col xs={12} xl={8} sm={12} md={8}>
+            <Col md={3} sm={10} xs={12}/>
+            <Col md={1} sm={2} xs={12}/>
+            <Col xs={12} xl={8} sm={12} md={10} lg={10}>
                 <Form
                     noValidate
                     className="ab-form"

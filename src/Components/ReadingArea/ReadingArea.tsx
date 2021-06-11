@@ -24,7 +24,7 @@ const ReadingArea: React.FC = () => {
             <Col md={{order: 'first', span: 6}} xs={{order: 'last', span: 12}}>
                 <Book authorsAvailable={sendAvailableAuthors}/>
             </Col>
-            <Col sm={6} md={6}><Author returnAvailableAuthors={getAvailableAuthors}/>
+            <Col sm={12} md={6}><Author returnAvailableAuthors={getAvailableAuthors}/>
             </Col>
         </Row>
     )
