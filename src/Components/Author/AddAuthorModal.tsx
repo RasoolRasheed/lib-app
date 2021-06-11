@@ -29,7 +29,7 @@ const AddAuthorModel: React.FC<AddAuthorModelProps> = (props) => {
     return (
         <Container fluid={true}>
             <Row>
-                <Col xs={9} sm={10} md={10} xl={10} lg={10}><p className={"create-author-title px-0"}><u>Create Author</u></p></Col>
+                <Col xs={9} sm={10} md={10} xl={10} lg={10}><p className={"create-author-title"}><u>Create Author</u></p></Col>
                 <Col xs={1} sm={2} md={1} xl={1} lg={1} className={"px-0"}>
                     <XCircle className={"create-author-title-xcircle"}
                              onClick={() => props.closeForm()}>
