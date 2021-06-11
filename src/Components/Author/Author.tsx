@@ -79,7 +79,7 @@ const Author: React.FC<AuthorsProps> = (props) => {
                 <Row>
                     {
                         authorsList.length === 0 &&
-                        <Col><i>No authors added</i></Col>
+                        <Col><i>No authors listed here</i></Col>
                     }
                     <Col md={12}>
                         <ul className="author-list px-0">
