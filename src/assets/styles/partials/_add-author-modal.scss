@@ -1,6 +1,9 @@
+@import "../common-variables";
+
 .create-author-title{
-  font-size: 20px;
-  color: #084732;
+  font-weight: 500;
+  font-size: x-large;
+  color: $ub_title_color;
 }
 
 .create-author-title-xcircle{
@@ -15,9 +18,14 @@
 
 .create-form{
   margin-top: 1em;
-}
+  .create-btn-container {
+    text-align: right;
 
-.create-btn{
-  margin-top: 1em;
-  float: right;
+    .create-btn {
+      border-radius: 6px;
+      background-color: $update_btn_color;
+      height: 2em;
+      width: 6.8em;
+    }
+  }
 }

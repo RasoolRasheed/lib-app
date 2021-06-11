@@ -5,7 +5,7 @@ import IAuthor from "../../Interface/IAuthor";
 import * as CurrencyFormat from 'react-currency-format';
 import '../../assets/styles/partials/_add-book-form.scss';
 import Select from 'react-select';
-import CreateBookTitle from "./CreateBookTitle";
+// import CreateBookTitle from "./CreateBookTitle";
 
 type AddBookProps = {
     createBook: (event: React.FormEvent, name: string, price: string, author: IAuthor[]) => void,

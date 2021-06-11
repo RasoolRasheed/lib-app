@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Button, Col, Container, Form, FormGroup, Row} from "react-bootstrap";
 import {XCircle} from "react-feather";
-import '../../assets/styles/partials/_add-author-modal.scss';
 
 type AddAuthorModelProps = {
     closeForm: () => void,
@@ -30,21 +29,21 @@ const AddAuthorModel: React.FC<AddAuthorModelProps> = (props) => {
     return (
         <Container fluid={true}>
             <Row>
-                <Col xs={10} md={4} className={"create-author-title px-0"}>Create Author</Col>
-                <Col xs={2} md={3} className={"px-3"}>
+                <Col xs={9} sm={10} md={10} xl={10} lg={10}><p className={"create-author-title px-0"}><u>Create Author</u></p></Col>
+                <Col xs={1} sm={2} md={1} xl={1} lg={1} className={"px-0"}>
                     <XCircle className={"create-author-title-xcircle"}
                              onClick={() => props.closeForm()}>
                     </XCircle>
                 </Col>
             </Row>
             <Row>
-                <Col className={"create-form px-3"} md={7}>
+                <Col className={"create-form px-5"} xs ={12} md={12} >
                     <Form noValidate validated={validated} className={"px-0 mx-0"}
                           onSubmit={(event: React.FormEvent) => submitAuthorForm(event)}>
                         <FormGroup>
-                            <Form.Label className="author-name-label">Name of Author</Form.Label>
+                            <Form.Label className="author-name-label mt-2 mb-0">Name of Author</Form.Label>
                             <Form.Control
-                                className="author-name"
+                                className="author-name mb-3"
                                 type="text"
                                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleAuthorChangeEvent(event)}
                                 value={enteredAuthor} required/>
