@@ -10,6 +10,8 @@ import {
 import ReadingArea from './Components/ReadingArea/ReadingArea';
 import { Row } from 'react-bootstrap';
 import NavBar from './Components/NavBar/NavBar';
+import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
 
 const App: React.FC = () => {
     return (
@@ -25,10 +27,10 @@ const App: React.FC = () => {
                     <Library/>
                 </Route>
                 <Route path="/about">
-                    <ReadingArea/>
+                    <About/>
                 </Route>
                 <Route path="/contact">
-                    {/*<Dashboard/>*/}
+                    <Contact/>
                 </Route>
             </Switch>
         </Router>
