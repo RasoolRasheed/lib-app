@@ -1,11 +1,13 @@
 @import "src/assets/styles/common-variables";
 
-    .ub-title-text {
-      font-weight: 500;
-      font-size: x-large;
-      color: $ub_title_color;
-      text-underline-position: under;
-    }
+.update-book-row {
+  margin-top: 2em;
+  .ub-title-text {
+    font-weight: 500;
+    font-size: x-large;
+    color: $ub_title_color;
+    text-underline-position: under;
+  }
 
   .close-btn {
     text-align: right;
@@ -14,26 +16,27 @@
       cursor: pointer;
     }
   }
+}
 
-  .ub-form {
-    .book-title-label, .book-price-label, .book-author-label {
-      font-size: 12px;
-      font-weight: 500;
-    }
+.ub-form {
+  .book-title-label, .book-price-label, .book-author-label {
+    font-size: 12px;
+    font-weight: 500;
+  }
 
-    .book-title-input, .book-price-input, .book-author-input {
-      border: 2px solid $input_field_border_color;
-      border-radius: 0;
-    }
+  .book-title-input, .book-price-input, .book-author-input {
+    border: 2px solid $input_field_border_color;
+    border-radius: 0;
+  }
 
-    .update-btn-container {
-      text-align: right;
+  .update-btn-container {
+    text-align: right;
 
-      .update-btn {
-        border-radius: 6px;
-        background-color: $update_btn_color;
-        height: 2em;
-        width: 6.8em;
-      }
+    .update-btn {
+      border-radius: 6px;
+      background-color: $update_btn_color;
+      height: 2em;
+      width: 6.8em;
     }
   }
+}

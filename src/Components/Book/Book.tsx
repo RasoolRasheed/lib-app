@@ -74,7 +74,7 @@ const Books:React.FC<BooksProps> = (props) =>{
     }
 
     return(
-            <Row className="books px-5">
+            <Row className="books px-3">
                 <Col sm={12} md={12}>
                     <h3 className="books-title">Books</h3>
                 </Col>

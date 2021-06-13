@@ -4,11 +4,9 @@ import Library from "./views/Library";
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
-import ReadingArea from './Components/ReadingArea/ReadingArea';
-import { Row } from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 import NavBar from './Components/NavBar/NavBar';
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";

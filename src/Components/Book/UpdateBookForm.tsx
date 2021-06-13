@@ -63,7 +63,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     return (
             <Row>
                 <Col md={9} xs={12}>
-                    <Row>
+                    <Row className={"update-book-row"}>
                         <Col className="ub-title" md={11} xs={10} lg={10}>
                             <p className="ub-title-text"><u>Update Book</u></p>
                         </Col>

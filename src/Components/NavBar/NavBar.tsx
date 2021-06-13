@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Nav, Navbar} from "react-bootstrap";
+import { Nav, Navbar} from "react-bootstrap";
 
 const NavBar: React.FC = () => {
     return (
