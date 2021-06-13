@@ -14,8 +14,7 @@ const DeleteBookModal: FC<DeleteBookModalProps> = (props) => {
             show={props.isVisible}
             onHide={props.closeModal}
             backdrop="static"
-            keyboard={false}
-        >
+            keyboard={false}>
             <Modal.Header>
                 <Modal.Title>Confirm delete action</Modal.Title>
             </Modal.Header>

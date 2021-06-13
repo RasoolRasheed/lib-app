@@ -5,7 +5,7 @@ import IAuthor from "../../Interface/IAuthor";
 import * as CurrencyFormat from 'react-currency-format';
 import '../../assets/styles/partials/_add-book-form.scss';
 import Select from 'react-select';
-// import CreateBookTitle from "./CreateBookTitle";
+import CreateBookTitle from "../CreateBookTitle/CreateBookTitle";
 
 type AddBookProps = {
     createBook: (event: React.FormEvent, name: string, price: string, author: IAuthor[]) => void,
@@ -52,17 +52,7 @@ const AddBookForm: React.FC<AddBookProps> = (props) => {
 
     return (
         <Row className={"add-book-row"}>
-            {/*<CreateBookTitle closeForm={}/>*/}
-            <Col xs={12} xl={8} sm={12} md={12}>
-                <Row>
-                    <Col xs={10} xl={9} sm={11} md={10} lg={9} className={"cb-title"}>
-                        <u>Create Book</u>
-                    </Col>
-                    <Col xs={1} xl={1} sm={1} md={1} lg={2}>
-                        <XCircle className={"add-book-xcircle"} onClick={props.closeForm}/>
-                    </Col>
-                </Row>
-            </Col>
+            <CreateBookTitle closeForm={props.closeForm}/>
             <Col md={3} sm={10} xs={12}/>
             <Col md={1} sm={2} xs={12}/>
             <Col xs={12} xl={8} sm={12} md={10} lg={10}>

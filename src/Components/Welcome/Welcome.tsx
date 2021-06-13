@@ -13,6 +13,7 @@ const Welcome: React.FC = () => {
                     <Image src={LibraryImage} alt="Library Image"/>
                 </Col>
             </Row>
+            {/*Picture Credits*/}
             <Row className={"credits"}>
                 <Col xs={12} className="photo-credits">
                     Photo by

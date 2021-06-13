@@ -1,5 +1,6 @@
 @import "common-variables";
 @import "partials/update-book-form";
+@import "partials/add-book-form";
 
 .books{
   margin-left: 2em;
@@ -17,7 +18,4 @@
     cursor: pointer;
   }
 
-  .add-book-xcircle {
-    cursor: pointer;
-  }
 }
